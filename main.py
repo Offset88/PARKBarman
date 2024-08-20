@@ -11,7 +11,7 @@ class Bot(BaseBot):
         print("funcionando")
         await self.highrise.walk_to(Position(16.5 , 16.25 , 19.5 , "FrontRight"))
     async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
-        print(f"{user.username} entrou na sala")      
+        print(f"{user.username} welcome")      
 
         await self.highrise.send_whisper(user.id,f"[📜]Convite] - [{user.username} Venha visitar o nosso [Bar] e se deliciar com nossas [Bebidas] e com nosso delicioso [Cardápio]")                   
 
@@ -340,7 +340,7 @@ class Bot(BaseBot):
         print(f"{user.username} whispered: {message}")
              
         if              message.startswith("Carteira") or  message.startswith("Wallet") or    message.startswith("wallet") or       message.startswith("carteira"):
-          if user.username == "ShoKytoo":
+          if user.username == "daniel_offset":
             wallet = (await self.highrise.get_wallet()).content
             await self.highrise.send_whisper(user.id,f"VALOR TOTAL: {wallet[0].amount} {wallet[0].type}")
 
